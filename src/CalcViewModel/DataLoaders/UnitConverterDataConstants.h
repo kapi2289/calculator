@@ -164,7 +164,9 @@ namespace CalculatorApp
             Data_Zetabits = UnitStart + 163,
             Data_Zetabytes = UnitStart + 164,
             Area_Pyeong = UnitStart + 165,
-            UnitEnd = Area_Pyeong
+            Sasin_Sasin = UnitStart + 166,
+            Sasin_Zloty = UnitStart + 167,
+            UnitEnd = Sasin_Zloty
         };
     }
 }

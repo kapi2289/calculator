@@ -42,6 +42,7 @@ static constexpr int PRESSURE_ID = 14;
 static constexpr int ANGLE_ID = 15;
 static constexpr int CURRENCY_ID = 16;
 static constexpr int GRAPHING_ID = 17;
+static constexpr int SASIN_ID = 18;
 // ^^^ THESE CONSTANTS SHOULD NEVER CHANGE ^^^
 
 wchar_t* towchar_t(int number)
@@ -294,6 +295,16 @@ static const list<NavCategoryInitializer> s_categoryManifest = [] {
                                   L"Angle",
                                   L"CategoryName_Angle",
                                   L"\uF515",
+                                  CategoryGroupType::Converter,
+                                  MyVirtualKey::None,
+                                  nullptr,
+                                  SUPPORTS_NEGATIVE,
+                                  true },
+          NavCategoryInitializer{ ViewMode::Sasin,
+                                  SASIN_ID,
+                                  L"Sasin",
+                                  L"CategoryName_Sasin",
+                                  L"\uEB0D",
                                   CategoryGroupType::Converter,
                                   MyVirtualKey::None,
                                   nullptr,

@@ -61,6 +61,7 @@ namespace CalculatorUnitTests
         VERIFY_ARE_EQUAL(13, NavCategory::Serialize(ViewMode::Data));
         VERIFY_ARE_EQUAL(14, NavCategory::Serialize(ViewMode::Pressure));
         VERIFY_ARE_EQUAL(15, NavCategory::Serialize(ViewMode::Angle));
+        VERIFY_ARE_EQUAL(18, NavCategory::Serialize(ViewMode::Sasin));
 
         VERIFY_ARE_EQUAL(-1, NavCategory::Serialize(ViewMode::None));
     }
@@ -88,6 +89,7 @@ namespace CalculatorUnitTests
         VERIFY_ARE_EQUAL(ViewMode::Data, NavCategory::Deserialize(ref new Box<int>(13)));
         VERIFY_ARE_EQUAL(ViewMode::Pressure, NavCategory::Deserialize(ref new Box<int>(14)));
         VERIFY_ARE_EQUAL(ViewMode::Angle, NavCategory::Deserialize(ref new Box<int>(15)));
+        VERIFY_ARE_EQUAL(ViewMode::Sasin, NavCategory::Deserialize(ref new Box<int>(18)));
     }
 
     void NavCategoryUnitTests::Deserialize_AllInvalid()
@@ -123,6 +125,7 @@ namespace CalculatorUnitTests
         VERIFY_IS_TRUE(NavCategory::IsValidViewMode(ViewMode::Data));
         VERIFY_IS_TRUE(NavCategory::IsValidViewMode(ViewMode::Pressure));
         VERIFY_IS_TRUE(NavCategory::IsValidViewMode(ViewMode::Angle));
+        VERIFY_IS_TRUE(NavCategory::IsValidViewMode(ViewMode::Sasin));
     }
 
     void NavCategoryUnitTests::IsValidViewMode_AllInvalid()
@@ -172,6 +175,7 @@ namespace CalculatorUnitTests
         VERIFY_IS_FALSE(NavCategory::IsCalculatorViewMode(ViewMode::Data));
         VERIFY_IS_FALSE(NavCategory::IsCalculatorViewMode(ViewMode::Pressure));
         VERIFY_IS_FALSE(NavCategory::IsCalculatorViewMode(ViewMode::Angle));
+        VERIFY_IS_FALSE(NavCategory::IsCalculatorViewMode(ViewMode::Sasin));
     }
 
     void NavCategoryUnitTests::IsDateCalculatorViewMode()
@@ -199,6 +203,7 @@ namespace CalculatorUnitTests
         VERIFY_IS_FALSE(NavCategory::IsDateCalculatorViewMode(ViewMode::Data));
         VERIFY_IS_FALSE(NavCategory::IsDateCalculatorViewMode(ViewMode::Pressure));
         VERIFY_IS_FALSE(NavCategory::IsDateCalculatorViewMode(ViewMode::Angle));
+        VERIFY_IS_FALSE(NavCategory::IsDateCalculatorViewMode(ViewMode::Sasin));
     }
 
     void NavCategoryUnitTests::IsConverterViewMode()
@@ -225,6 +230,7 @@ namespace CalculatorUnitTests
         VERIFY_IS_TRUE(NavCategory::IsConverterViewMode(ViewMode::Data));
         VERIFY_IS_TRUE(NavCategory::IsConverterViewMode(ViewMode::Pressure));
         VERIFY_IS_TRUE(NavCategory::IsConverterViewMode(ViewMode::Angle));
+        VERIFY_IS_TRUE(NavCategory::IsConverterViewMode(ViewMode::Sasin));
     }
 
     void NavCategoryUnitTests::GetFriendlyName()
@@ -250,6 +256,7 @@ namespace CalculatorUnitTests
         VERIFY_ARE_EQUAL(StringReference(L"Data"), NavCategory::GetFriendlyName(ViewMode::Data));
         VERIFY_ARE_EQUAL(StringReference(L"Pressure"), NavCategory::GetFriendlyName(ViewMode::Pressure));
         VERIFY_ARE_EQUAL(StringReference(L"Angle"), NavCategory::GetFriendlyName(ViewMode::Angle));
+        VERIFY_ARE_EQUAL(StringReference(L"Sasin"), NavCategory::GetFriendlyName(ViewMode::Sasin));
 
         VERIFY_ARE_EQUAL(StringReference(L"None"), NavCategory::GetFriendlyName(ViewMode::None));
     }
@@ -278,6 +285,7 @@ namespace CalculatorUnitTests
         VERIFY_ARE_EQUAL(CategoryGroupType::Converter, NavCategory::GetGroupType(ViewMode::Data));
         VERIFY_ARE_EQUAL(CategoryGroupType::Converter, NavCategory::GetGroupType(ViewMode::Pressure));
         VERIFY_ARE_EQUAL(CategoryGroupType::Converter, NavCategory::GetGroupType(ViewMode::Angle));
+        VERIFY_ARE_EQUAL(CategoryGroupType::Converter, NavCategory::GetGroupType(ViewMode::Sasin));
     }
 
     void NavCategoryUnitTests::GetIndex()
@@ -289,13 +297,14 @@ namespace CalculatorUnitTests
         {
             orderedModes = { ViewMode::Standard, ViewMode::Scientific, ViewMode::Graphing, ViewMode::Programmer,  ViewMode::Date,     ViewMode::Currency,
                              ViewMode::Volume,   ViewMode::Length,     ViewMode::Weight,   ViewMode::Temperature, ViewMode::Energy,   ViewMode::Area,
-                             ViewMode::Speed,    ViewMode::Time,       ViewMode::Power,    ViewMode::Data,        ViewMode::Pressure, ViewMode::Angle };
+                             ViewMode::Speed,    ViewMode::Time,       ViewMode::Power,    ViewMode::Data,        ViewMode::Pressure, ViewMode::Angle,
+                             ViewMode::Sasin };
         }
         else
         {
             orderedModes = { ViewMode::Standard, ViewMode::Scientific, ViewMode::Programmer,  ViewMode::Date,     ViewMode::Currency, ViewMode::Volume,
                              ViewMode::Length,   ViewMode::Weight,     ViewMode::Temperature, ViewMode::Energy,   ViewMode::Area,     ViewMode::Speed,
-                             ViewMode::Time,     ViewMode::Power,      ViewMode::Data,        ViewMode::Pressure, ViewMode::Angle };
+                             ViewMode::Time,     ViewMode::Power,      ViewMode::Data,        ViewMode::Pressure, ViewMode::Angle, ViewMode::Sasin };
         }
 
         auto orderedModesSize = size(orderedModes);
@@ -317,13 +326,14 @@ namespace CalculatorUnitTests
         {
             orderedModes = { ViewMode::Standard, ViewMode::Scientific, ViewMode::Graphing, ViewMode::Programmer,  ViewMode::Date,     ViewMode::Currency,
                              ViewMode::Volume,   ViewMode::Length,     ViewMode::Weight,   ViewMode::Temperature, ViewMode::Energy,   ViewMode::Area,
-                             ViewMode::Speed,    ViewMode::Time,       ViewMode::Power,    ViewMode::Data,        ViewMode::Pressure, ViewMode::Angle };
+                             ViewMode::Speed,    ViewMode::Time,       ViewMode::Power,    ViewMode::Data,        ViewMode::Pressure, ViewMode::Angle,
+                             ViewMode::Sasin };
         }
         else
         {
             orderedModes = { ViewMode::Standard, ViewMode::Scientific, ViewMode::Programmer,  ViewMode::Date,     ViewMode::Currency, ViewMode::Volume,
                              ViewMode::Length,   ViewMode::Weight,     ViewMode::Temperature, ViewMode::Energy,   ViewMode::Area,     ViewMode::Speed,
-                             ViewMode::Time,     ViewMode::Power,      ViewMode::Data,        ViewMode::Pressure, ViewMode::Angle };
+                             ViewMode::Time,     ViewMode::Power,      ViewMode::Data,        ViewMode::Pressure, ViewMode::Angle, ViewMode::Sasin };
         }
 
         auto orderedModesSize = size(orderedModes);
@@ -373,6 +383,7 @@ namespace CalculatorUnitTests
         VERIFY_ARE_EQUAL(10, NavCategory::GetIndexInGroup(ViewMode::Data, CategoryGroupType::Converter));
         VERIFY_ARE_EQUAL(11, NavCategory::GetIndexInGroup(ViewMode::Pressure, CategoryGroupType::Converter));
         VERIFY_ARE_EQUAL(12, NavCategory::GetIndexInGroup(ViewMode::Angle, CategoryGroupType::Converter));
+        VERIFY_ARE_EQUAL(12, NavCategory::GetIndexInGroup(ViewMode::Sasin, CategoryGroupType::Converter));
 
         VERIFY_ARE_EQUAL(-1, NavCategory::GetIndexInGroup(ViewMode::None, CategoryGroupType::Calculator));
         VERIFY_ARE_EQUAL(-1, NavCategory::GetIndexInGroup(ViewMode::None, CategoryGroupType::Converter));
@@ -441,7 +452,7 @@ namespace CalculatorUnitTests
         VERIFY_ARE_EQUAL(CategoryGroupType::Converter, converterGroup->GroupType);
 
         IObservableVector<NavCategory ^> ^ converterCategories = converterGroup->Categories;
-        VERIFY_ARE_EQUAL(13, converterCategories->Size);
+        VERIFY_ARE_EQUAL(14, converterCategories->Size);
         ValidateNavCategory(converterCategories, 0u, ViewMode::Currency);
         ValidateNavCategory(converterCategories, 1u, ViewMode::Volume);
         ValidateNavCategory(converterCategories, 2u, ViewMode::Length);
@@ -455,5 +466,6 @@ namespace CalculatorUnitTests
         ValidateNavCategory(converterCategories, 10u, ViewMode::Data);
         ValidateNavCategory(converterCategories, 11u, ViewMode::Pressure);
         ValidateNavCategory(converterCategories, 12u, ViewMode::Angle);
+        ValidateNavCategory(converterCategories, 13u, ViewMode::Sasin);
     }
 }

@@ -24,7 +24,8 @@ namespace CalculatorUITestFramework
         Power,
         Data,
         Pressure,
-        Angle
+        Angle,
+        Sasin
     }
 
     public class NavigationMenu
@@ -93,6 +94,9 @@ namespace CalculatorUITestFramework
                     break;
                 case CalculatorMode.Angle:
                     modeAccessibilityId = "Angle";
+                    break;
+                case CalculatorMode.Sasin:
+                    modeAccessibilityId = "Sasin";
                     break;
                 default:
                     throw (new ArgumentException("The mode is not valid"));

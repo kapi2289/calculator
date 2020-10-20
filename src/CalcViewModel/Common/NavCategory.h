@@ -45,7 +45,8 @@ namespace CalculatorApp
             Pressure = 14,
             Angle = 15,
             Currency = 16,
-            Graphing = 17
+            Graphing = 17,
+            Sasin = 18
         };
 
     public

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -1157,6 +1157,10 @@
     <value>Waluta</value>
     <comment>Unit conversion category name called Currency</comment>
   </data>
+  <data name="CategoryName_SasinText" xml:space="preserve">
+    <value>Sasin</value>
+    <comment>Unit conversion category name called Sasin</comment>
+  </data>
   <data name="UnitName_FluidOunceUK" xml:space="preserve">
     <value>Uncje cieczy (UK)</value>
     <comment>A measurement unit for volume, in plural. (Please choose the most appropriate plural form to fit any number between 0 and 999,999,999,999,999)</comment>
@@ -2001,6 +2005,14 @@
     <value>t</value>
     <comment>An abbreviation for a measurement unit of weight</comment>
   </data>
+  <data name="UnitAbbreviation_Sasin" xml:space="preserve">
+    <value>sas</value>
+    <comment>An abbreviation for a measurement unit of sasin</comment>
+  </data>
+  <data name="UnitAbbreviation_Zloty" xml:space="preserve">
+    <value>PLN</value>
+    <comment>An abbreviation for a measurement unit of sasin</comment>
+  </data>
   <data name="UnitName_Carat" xml:space="preserve">
     <value>Karaty</value>
     <comment>A measurement unit for weight. (Please choose the most appropriate plural form to fit any number between 0 and 999,999,999,999,999)</comment>
@@ -2092,6 +2104,14 @@
   <data name="UnitName_Tonne" xml:space="preserve">
     <value>Tony metryczne</value>
     <comment>A measurement unit for weight. This is the metric version of tonne. (Please choose the most appropriate plural form to fit any number between 0 and 999,999,999,999,999)</comment>
+  </data>
+  <data name="UnitName_Sasin" xml:space="preserve">
+    <value>Sasiny</value>
+    <comment>A measurement unit for sasin. This is the metric version of sasin. (Please choose the most appropriate plural form to fit any number between 0 and 999,999,999,999,999)</comment>
+  </data>
+  <data name="UnitName_Zloty" xml:space="preserve">
+    <value>Złotych</value>
+    <comment>A measurement unit for sasin. This is the metric version of zloty. (Please choose the most appropriate plural form to fit any number between 0 and 999,999,999,999,999)</comment>
   </data>
   <data name="UnitName_CD" xml:space="preserve">
     <value>CD</value>

@@ -767,6 +767,23 @@ void UnitConverterDataLoader::GetUnits(_In_ unordered_map<ViewMode, vector<Order
     angleUnits.push_back(
         OrderedUnit{ UnitConverterUnits::Angle_Gradian, GetLocalizedStringName(L"UnitName_Gradian"), GetLocalizedStringName(L"UnitAbbreviation_Gradian"), 3 });
     unitMap.emplace(ViewMode::Angle, angleUnits);
+
+    vector<OrderedUnit> sasinUnits;
+    sasinUnits.push_back(OrderedUnit{ UnitConverterUnits::Sasin_Sasin,
+                                      GetLocalizedStringName(L"UnitName_Sasin"),
+                                      GetLocalizedStringName(L"UnitAbbreviation_Sasin"),
+                                      1,
+                                      true,
+                                      false,
+                                      false });
+    sasinUnits.push_back(OrderedUnit{ UnitConverterUnits::Sasin_Zloty,
+                                      GetLocalizedStringName(L"UnitName_Zloty"),
+                                      GetLocalizedStringName(L"UnitAbbreviation_Zloty"),
+                                      2,
+                                      false,
+                                      true,
+                                      false });
+    unitMap.emplace(ViewMode::Sasin, sasinUnits);
 }
 
 void UnitConverterDataLoader::GetConversionData(_In_ unordered_map<ViewMode, unordered_map<int, double>>& categoryToUnitConversionMap)
@@ -933,7 +950,10 @@ void UnitConverterDataLoader::GetConversionData(_In_ unordered_map<ViewMode, uno
                                                    { ViewMode::Pressure, UnitConverterUnits::Pressure_KiloPascal, 0.0098692326671601 },
                                                    { ViewMode::Pressure, UnitConverterUnits::Pressure_MillimeterOfMercury, 0.0013155687145324 },
                                                    { ViewMode::Pressure, UnitConverterUnits::Pressure_Pascal, 9.869232667160128e-6 },
-                                                   { ViewMode::Pressure, UnitConverterUnits::Pressure_PSI, 0.068045961016531 } };
+                                                   { ViewMode::Pressure, UnitConverterUnits::Pressure_PSI, 0.068045961016531 },
+
+                                                   { ViewMode::Sasin, UnitConverterUnits::Sasin_Sasin, 70000000 },
+                                                   { ViewMode::Sasin, UnitConverterUnits::Sasin_Zloty, 1 } };
 
     // Populate the hash map and return;
     for (UnitData unitdata : unitDataList)
