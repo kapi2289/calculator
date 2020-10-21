@@ -783,6 +783,12 @@ void UnitConverterDataLoader::GetUnits(_In_ unordered_map<ViewMode, vector<Order
                                       false,
                                       true,
                                       false });
+    sasinUnits.push_back(
+        OrderedUnit{ UnitConverterUnits::Sasin_Millisasin, GetLocalizedStringName(L"UnitName_Millisasin"), GetLocalizedStringName(L"UnitAbbreviation_Millisasin"), 3 });
+    sasinUnits.push_back(OrderedUnit{
+        UnitConverterUnits::Sasin_Microsasin, GetLocalizedStringName(L"UnitName_Microsasin"), GetLocalizedStringName(L"UnitAbbreviation_Microsasin"), 4 });
+    sasinUnits.push_back(OrderedUnit{
+        UnitConverterUnits::Sasin_Nanosasin, GetLocalizedStringName(L"UnitName_Nanosasin"), GetLocalizedStringName(L"UnitAbbreviation_Nanosasin"), 5 });
     unitMap.emplace(ViewMode::Sasin, sasinUnits);
 }
 
@@ -953,7 +959,10 @@ void UnitConverterDataLoader::GetConversionData(_In_ unordered_map<ViewMode, uno
                                                    { ViewMode::Pressure, UnitConverterUnits::Pressure_PSI, 0.068045961016531 },
 
                                                    { ViewMode::Sasin, UnitConverterUnits::Sasin_Sasin, 70000000 },
-                                                   { ViewMode::Sasin, UnitConverterUnits::Sasin_Zloty, 1 } };
+                                                   { ViewMode::Sasin, UnitConverterUnits::Sasin_Zloty, 1 },
+                                                   { ViewMode::Sasin, UnitConverterUnits::Sasin_Millisasin, 70000 },
+                                                   { ViewMode::Sasin, UnitConverterUnits::Sasin_Microsasin, 70 },
+                                                   { ViewMode::Sasin, UnitConverterUnits::Sasin_Nanosasin, 0.07 } };
 
     // Populate the hash map and return;
     for (UnitData unitdata : unitDataList)

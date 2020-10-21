@@ -166,7 +166,10 @@ namespace CalculatorApp
             Area_Pyeong = UnitStart + 165,
             Sasin_Sasin = UnitStart + 166,
             Sasin_Zloty = UnitStart + 167,
-            UnitEnd = Sasin_Zloty
+            Sasin_Millisasin = UnitStart + 168,
+            Sasin_Microsasin = UnitStart + 169,
+            Sasin_Nanosasin = UnitStart + 170,
+            UnitEnd = Sasin_Nanosasin
         };
     }
 }
